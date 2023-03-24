@@ -50,9 +50,9 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1 or /projects/1.json
   def destroy
     @project.destroy
-
+    @project.tasks.clear     
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: "Project was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "Project was successfully destroyed." }
       format.json { head :no_content }
     end
   end

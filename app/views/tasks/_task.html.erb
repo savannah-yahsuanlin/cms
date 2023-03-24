@@ -1,3 +1,11 @@
 <P><%= task.content %></P> 
-<span><%= link_to 'Delete', project_task_path(@project, task.id), method: :delete, data:{confirm: 'are you sure?'} %></span>
-<span><%= link_to 'Complete', completed_project_task_path(@project, task.id), method: :patch %></span>
+<span>
+	<%= link_to project_task_path(@project, task.id), method: :delete, data:{confirm: 'are you sure?'} do %>
+		<i class='fa fa-trash-can'></i>
+	<% end %>
+</span>
+<span>
+<%= link_to completed_project_task_path(@project, task.id), method: :patch do %>
+	<i class='fa fa-check'></i>
+<% end %>
+</span>
