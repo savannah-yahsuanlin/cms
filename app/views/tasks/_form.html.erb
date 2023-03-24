@@ -1,4 +1,6 @@
-<%= form_for([@project, @project.tasks.build]) do |f| %>
-	<%= f.text_field :content %>
-	<%= f.submit %>
-<% end  %>
+<div style="margin: 10px 0">
+	<%= form_for([@project, @project.tasks.build]) do |f| %>
+		<%= f.text_field :content %>
+		<%= f.submit %>
+	<% end  %>
+</div>
