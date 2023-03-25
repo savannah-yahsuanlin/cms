@@ -31,6 +31,7 @@ gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'railties', '~> 6.1', '>= 6.1.7.2'
 gem 'jquery-rails'
+gem 'ransack', '3.2.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

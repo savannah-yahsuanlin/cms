@@ -1,4 +1,12 @@
+
 <p id="notice"><%= notice %></p>
+
+<%= search_form_for @q do |f| %>
+  <%= f.label :title_cont %>
+  <%= f.search_field :title_cont, autofocus: 'true', autocomplete: 'true' %>
+<% end %>
+
+<%= link_to 'Clear search', request.path if request.query_parameters.any? %>
 
 <h1>Projects</h1>
 

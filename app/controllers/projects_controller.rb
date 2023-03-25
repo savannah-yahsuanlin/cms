@@ -4,6 +4,9 @@ class ProjectsController < ApplicationController
   # GET /projects or /projects.json
   def index
     @projects = Project.all
+
+    @q = Project.ransack(params[:q])
+    @projects = @q.result(distinct: true)
   end
 
   # GET /projects/1 or /projects/1.json
@@ -56,6 +59,11 @@ class ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["title"]
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
